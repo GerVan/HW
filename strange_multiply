@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+void strange_multiply() {
+	int x,y,a=0,i=0;
+	cin >> x >> y;
+if (x>0){
+for (i;i < y;i++) {
+			a = a + x;
+	}
+}
+else {
+for (i;i < y;i++) {
+			a = a + x;
+		}
+}
+if (y>0) {
+    cout << a;
+}
+else {
+    cout << -a;
+}
+}
+int main()
+{
+	strange_multiply();
+}
