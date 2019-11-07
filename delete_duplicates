@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+void delete_duplicates (){
+int n,i,j,m ;
+cin >> n;
+int Array[n];
+for (i=0; i<n ; i++) {
+    cin >> Array[i];
+}
+ for (i = 0; i < n; i++) {
+    for (j = 0; j < n; j++) {
+			if ((Array[i] == Array[j]) && (i != j)){
+				for (m=i; m < n; m++) {
+                Array[m] = Array[m + 1];
+}
+     n=n-1;
+  }
+ }
+}
+for (j = 0; j < n; j++){
+    cout << Array[j]<< ' ';
+ }
+}
+
+int main()
+{
+delete_duplicates ();
+}
