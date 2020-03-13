@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+struct Node {
+int data;
+Node*left=nullptr;
+Node*right=nullptr;
+};
+struct Tree {
+Node*root=nullptr;
+Tree ();
+void searching (Node*t, int x) {
+if (t->data==x) {
+return 1;
+}
+else if (t->data>x) searching(t->right, x);
+else searching(t->left, x);
+}
+~Tree () {
+del(root);
+}
+void del(Node*t) {
+if (t->left) del(t->left);
+if (t->right) del(t->right);
+delete t;
+void push (Node*t, int x) {
+Node*temp=nullptr;
+Node*ins=nullptr;
+if (*root==nullptr) *root=t;
+temp=*t;
+while (temp) {
+    if (t->data<x) {
+        if (temp->right) temp=temp->right;
+else temp->right=x;
+} else if (t->data>x) {
+if (temp->left) temp=temp->left
+    else temp->left=x;
+}
+}
+}
+void deleting (Node*x) {
+if (x->left && x->right) {
+Node*x=x->left;
+while (x->right) x=x->right;
+x->data=x->data;
+} else if (x->left) {
+if (x==x->parent->left) x->parent->left=x->left;
+else x->parent->right=x->left;
+} else if (x->right) {
+if (x==x->parent->right) x->parent->right=x->right;
+else x->parent->left=x->right;
+} else {
+if (x==x->parent->left) x->parent->left=nullptr;
+else x->parent->right=nullptr;
+}
+delete x;
+}
+}
+};
