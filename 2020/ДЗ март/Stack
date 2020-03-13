@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+struct Node {
+    int data;
+    Node*next=Null;
+    };
+    struct Stack {
+    Node*head=Null;
+    Stack (int a){
+    head=new int Node;
+    head->data=0;
+    }
+    void push (int a) {
+    if (head==Null) {
+    head=new Node;
+    head=Null;
+    return
+    }
+    Node*temp=new Node;
+    temp->data=a;
+    temp->next=head;
+    head=temp;
+    }
+    int pop () {
+    Node*temp=head;
+    head=head->next;
+    int a=temp->data;
+    delete temp;
+    return a;
+    }
+    ~Stack () {
+    while (head!=Null) {
+        Node*temp=head;
+        head=head->next;
+        delete temp;
+    }
+    }
+    };
+int main () {
+int a;
+cin>>a;
+push(a);
+}
